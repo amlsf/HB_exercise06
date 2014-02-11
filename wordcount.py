@@ -21,8 +21,7 @@ word_list = underscore_word_string.split()
 test.close()
 
 
-# TO DO ask if it's removing ---- --hello-- because of looping? 
-
+# TO DO ask if it's removing ---- --hello-- because of looping? (no that's how strip works, all leading, trailing punct)
 # strips out punctuation
 format_list = []
 for word in word_list:
@@ -43,6 +42,7 @@ for word in format_list:
 rev_dict = {}
 for key, value in word_dict.iteritems():
     if rev_dict.get(value) != None: #if it sin there, append to the list of the value in rev_dict
+# no need for none, just truthy falsey
         rev_dict[value].append(key)
     else: # if not in there, create a new key in rev_dict
         rev_dict[value] = [key]
@@ -61,7 +61,7 @@ for item in desc_ord_list:
 # TO DO print rev_dict[item].sort()
 # print rev_dict['2']  (Why doesn't this print?) 
 
-# TODO Can I do this without a nested for loop? 
+# TODO Can I do this without a nested for loop? Use a join function expression to replace inner for loop
 for key in desc_ord_list:
     for i in range(len(rev_dict[key])):
         print key, rev_dict[key][i]
