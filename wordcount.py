@@ -50,9 +50,12 @@ for key, value in word_dict.iteritems():
     # else: 
     #     new_dict[value] = key
 
-
 # How would you pull this out of the list? 
 desc_ord_list = sorted(rev_dict.keys(), reverse = True)
 for item in desc_ord_list:
     rev_dict[item].sort()
     print "%s %s" % (item, rev_dict[item])
+
+for key, value in rev_dict.iteritems():
+    for item in value:
+        print "%s %s" % (key, item) 
