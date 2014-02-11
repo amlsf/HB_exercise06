@@ -54,8 +54,11 @@ for key, value in word_dict.iteritems():
 desc_ord_list = sorted(rev_dict.keys(), reverse = True)
 for item in desc_ord_list:
     rev_dict[item].sort()
-    print "%s %s" % (item, rev_dict[item])
+#   print "%s %s" % (item, rev_dict[item])
+# TO DO print rev_dict[item].sort()
+# print rev_dict['2']  (Why doesn't this print?) 
 
-for key, value in rev_dict.iteritems():
-    for item in value:
-        print "%s %s" % (key, item) 
+for key in desc_ord_list:
+    for i in range(len(rev_dict[key])):
+        print key, rev_dict[key][i]
+        i += 1
